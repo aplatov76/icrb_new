@@ -1,0 +1,28 @@
+.navigation
+    &__button
+        z-index: 6
+        text-align: center
+        text-align: center
+        cursor: pointer
+    &__icon
+        position: relative
+        &,       
+        &::before,
+        &::after
+            width: 1.5rem
+            height: .2rem
+            background: #fff
+            display: inline-block
+        &::before,
+        &::after
+            content: ""
+            position: absolute
+            left: 0
+        &::before
+            top: -8px
+        &::after
+            top: 8px
+.toggler
+    position: absolute
+    top: 0
+    padding: 10px

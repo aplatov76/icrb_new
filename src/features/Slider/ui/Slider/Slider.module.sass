@@ -1,0 +1,73 @@
+@import "app/styles/abstracts/_mixins"
+
+@keyframes slide
+  0%
+    // transform: translate(0%, 0)
+    opacity: 0.2
+  30%
+    // transform: translate(30%, 0)
+    opacity: 0.5
+  60%
+    //transform: translate(60%, 0)
+    opacity: 0.8
+  100%
+    // transform: translate(100%, 0)
+    opacity: 1
+.main
+    position: relative
+.wrapper
+    display: flex
+    width: 100%
+.currentImg
+    width: 100%
+    display: none
+    animation-name: slide
+    animation-timing-function: linear
+
+.active
+    display: block
+    object-fit: cover
+.arrow
+    cursor: pointer
+    position: absolute
+    fill: #fff
+    top: 50%
+    svg
+        width: 10px
+    &__left
+        margin-left: 5px
+        left: 0
+    &__right
+        margin-right: 5px
+        right: 0
+    &:hover
+        scale: 1.05
+.title
+    color: var(--gray-dark)
+    position: absolute
+    top: 15%
+    left: 1%
+    font-size: 27px
+    margin: 0 15px 15px 15px
+    @include respond(phone)
+        font-size: 18px
+.description
+    color: var(--gray-dark)
+    position: absolute
+    top: 25%
+    left: 1%
+    font-size: 18px
+    margin: 15px
+    @include respond(phone)
+        font-size: 14px
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 5
+        -webkit-box-orient: vertical
+.textWrapper
+    background: #fff
+    padding: 10px
+    border-radius: 1px
+    min-width: 10rem
+    max-width: 45rem

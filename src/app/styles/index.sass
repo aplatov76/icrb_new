@@ -1,0 +1,59 @@
+@import "reset"
+@import "abstracts/_mixins"
+@import "variables/global"
+@import "themes/dark"
+@import "themes/normal"
+
+.app
+    font: var(--font-m)
+    background: var(--bg-color)
+    color: var(--primary-color)
+    min-height: 100vh
+    display: flex
+    flex-direction: row
+
+.content-page
+    display: flex
+    flex-direction: column
+    width: 100%
+
+.page-wrapper
+    flex-grow: 1
+    padding: 20px
+    background: var(--bg-color-inverted)
+
+.box:before, .box:after
+    position: absolute
+    padding: 0 0 5px 5px
+    width: 25%
+    height: 3px
+    content: ' '
+    left: 12px
+    bottom: 12px
+    background: transparent
+    -webkit-transform: skew(-5deg) rotate(-5deg)
+    -moz-transform: skew(-5deg) rotate(-5deg)
+    -ms-transform: skew(-5deg) rotate(-5deg)
+    -o-transform: skew(-5deg) rotate(-5deg)
+    transform: skew(-5deg) rotate(-5deg)
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3)
+    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3)
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3)
+    z-index: -1
+.box:after
+    left: auto
+    right: 12px
+    -webkit-transform: skew(5deg) rotate(5deg)
+    -moz-transform: skew(5deg) rotate(5deg)
+    -ms-transform: skew(5deg) rotate(5deg)
+    -o-transform: skew(5deg) rotate(5deg)
+    transform: skew(5deg) rotate(5deg)
+.box
+    position: relative
+    margin-bottom: 20px
+    background-color: #fff
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)
+.box-left
+    padding: 10px

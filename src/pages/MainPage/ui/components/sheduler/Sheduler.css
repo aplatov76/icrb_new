@@ -1,0 +1,7 @@
+.react-date-picker__wrapper {
+  border: none !important;
+}
+
+.react-date-picker.form-control {
+  padding: 0.29rem 0.75rem !important;
+}
