@@ -39,13 +39,13 @@ const owlData: OwlType[] = [
   }
 ]
 
-const buildMenu = (routes: RouteType[]) => {
+const buildMenu = (routes: RouteType[], url: string = '') => {
   const [active, setActive] = useState<ActiveLink>({ name: '', collapse: false })
 
   return routes.map((route) => (
     <li key={route.path}>
       {route.children?.length === 0 || !route.children || route.onlyParent ? (
-        <Link to={route.path}>{route.name}</Link>
+        <Link to={url + route.path}>{route.name}</Link>
       ) : (
         <span
           className={classNames('opener', { active: route.name === active.name && active.collapse })}
@@ -56,7 +56,7 @@ const buildMenu = (routes: RouteType[]) => {
           {route.name}
         </span>
       )}
-      {route.children?.length > 0 && <ul>{buildMenu(route.children)}</ul>}
+      {route.children?.length > 0 && <ul>{buildMenu(route.children, `${route.path}/` ?? '')}</ul>}
     </li>
   ))
 }

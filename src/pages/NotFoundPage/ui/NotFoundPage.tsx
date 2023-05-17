@@ -1,5 +1,5 @@
-import cls from './NotFoundPage.module.sass'
+import { EmptyData } from '@/shared/ui/EmptyData/EmptyData'
 
 export const NotFoundPage = () => {
-  return <div className={cls.NotFoundPage}>NotFoundPage</div>
+  return <EmptyData text="Страница не найдена" />
 }

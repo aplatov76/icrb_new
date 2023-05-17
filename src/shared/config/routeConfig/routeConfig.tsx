@@ -1,9 +1,10 @@
 import { DetailNews } from '@/entities/News'
 import { AboutPage } from '@/pages/AboutPage'
-import { MainPage } from '@/pages/MainPage'
+import { MainPage, DoctorsPage, AdministrationPage, HistoryPage } from '@/pages/MainPage'
 import { Sheduler } from '@/pages/MainPage/ui/components/sheduler/Sheduler'
 import { NewsPage } from '@/pages/NewsPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
+import { ServiceFreePage, ServicePaidPage, ServicePayingPage, ServiceTypesPage } from '@/pages/Services'
 import { type RouteProps } from 'react-router-dom'
 
 export enum AppRoutes {
@@ -59,17 +60,17 @@ export const routeConfig: RouteConfig = {
       {
         path: 'administration',
         name: 'Администрация',
-        element: <MainPage />
+        element: <AdministrationPage />
       },
       {
         path: 'medworkers',
         name: 'Медицинские работники',
-        element: <MainPage />
+        element: <DoctorsPage />
       },
       {
         path: 'history',
         name: 'История',
-        element: <MainPage />
+        element: <HistoryPage />
       }
     ]
   },
@@ -88,28 +89,28 @@ export const routeConfig: RouteConfig = {
   },
   [AppRoutes.SERVICES]: {
     name: 'Услуги',
-    path: AppRoutes.SERVICES,
+    path: 'services',
     element: <AboutPage />,
     children: [
       {
         path: 'type-medical',
         name: 'Виды и профили оказываемой медицинской помощи',
-        element: <MainPage />
+        element: <ServiceTypesPage />
       },
       {
         path: 'free-medical',
         name: 'Перечень предоставляемых бесплатных медицинских услуг',
-        element: <MainPage />
+        element: <ServiceFreePage />
       },
       {
         path: 'paid-medical',
         name: 'Перечень и цены на платные медицинские услуги',
-        element: <MainPage />
+        element: <ServicePaidPage />
       },
       {
         path: 'paying',
         name: 'Порядок оплаты медицинских услуг',
-        element: <MainPage />
+        element: <ServicePayingPage />
       }
     ]
   },

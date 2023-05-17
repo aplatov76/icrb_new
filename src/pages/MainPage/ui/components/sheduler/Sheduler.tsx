@@ -19,7 +19,7 @@ export const Sheduler = () => {
 
   const hgd = (event: ChangeEvent<HTMLSelectElement>) => {
     const select = event.target.value
-    setCurrentSpec(select)
+    setCurrentSpec(parseInt(select))
   }
 
   if (isLoading) {
